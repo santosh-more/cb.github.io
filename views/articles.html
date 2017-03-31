@@ -1,0 +1,43 @@
+<style type="text/css">
+.MakaleYazariAdi {
+    line-height: 34px;
+}
+
+#BegeniButonlari {
+    float: right;
+    margin-top: 15px;
+}
+</style>
+<div class="container" ng-init="getArticle()">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a class="MakaleYazariAdi">{{article_.name}}</a>
+            <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <a ng-click="openModal(article_.articleImage)" style="background-color: rgba(0,0,0,0.4);">
+                       <img class="media-object " ng-src="http://localhost:8080/{{article_.articleImage}} " alt="{{article_.articleImage}} " height="250px " width="300px ">
+                   </a>
+                </div>
+                <div class="media-body ">
+                    <h4 class="media-heading ">{{article_.title}}</h4>
+                        <p ng-bind-html="article_.fullstory"></p>
+                        <!-- {{article_.fullstory}} -->
+                    <br>
+                    <div class="clearfix author " style="float: right; font-size: small; ">-created on :{{article_.createdon.slice(0,10)}}</div>
+                </div>
+                <div class="btn-group " role="group " id="BegeniButonlari ">
+                    <!-- <button type="button " class="btn btn-default ">
+                        <span class="badge badge-notify ">0</span>
+                        <span class="glyphicon glyphicon-thumbs-up "></span></button>
+                    <button type="button " class="btn btn-default ">
+                        <span class="glyphicon glyphicon-thumbs-down "></span>
+                        <span class="badge badge-notify ">0</span>
+                        </button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

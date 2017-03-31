@@ -1,0 +1,59 @@
+<div class="container" ng-init="searchArticle()">
+    <div class="span8" ng-repeat="article in search">
+        <a ui-sref="default.articles({article:article.title})">
+            <h3>{{article.title}}</h3>
+        </a>
+        <p ng-bind-html="article.shortDesc"></p>
+        <div>
+            <div class="more label pull-right">
+            <!-- <label>Written By :</label> -->
+            <span class="badge badge-notify">{{article.name}}</span>
+            <!-- <label>Created On :</label> -->
+            <span class="badge badge-notify">{{article.createdon.slice(0,10)}}</span>
+            <a ui-sref="default.articles({article:article.title})">Read more</a>
+            </div>
+            <!-- <div class="tags" >
+                <span class="glyphicon glyphicon-tags" ng-repeat="cat in article.category">
+                <a href="#">{{cat}}</a>
+                </span>
+            </div> -->
+        </div>
+        <div class="clear"></div>
+        <hr style="background-color: blue;">
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="col-lg-10 col-sm-10 col-md-offset-1" ng-init="searchArticle()">
+        <span class="badge badge-notify" style="color: #66ff33;" ng-if="search.length">Number of result found : {{search.length}}</span>
+        <table class="table table-responsive ">
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Short Description</td>
+                    <td>Created On</td>
+                    <td>Written By</td>
+                </tr>
+            </thead>
+            <tbody>
+                <div  ng-repeat="article in search">
+                <span>{{article.title}}</span>
+                &times;
+                <span>{{article.shortDesc}}</span>
+                </div>
+                    <tr ng-repeat="article in search" class="clickable-row" >
+                        <td>
+                            <a ui-sref="default.articles({article:article.title})">
+                            {{article.title}}
+                            </a>
+                        </td>
+                        <td>
+                            {{article.shortDesc}}</td>
+                        <td>{{article.createdon.slice(0,10)}}</td>
+                        <td>{{article.name}}</td>
+                        </a>
+                    </tr ui-sref="default.articles({article:article.title})">
+            </tbody>
+        </table>
+        </div>
+    </div>
+ -->

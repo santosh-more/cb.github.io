@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-lg-8 col-sm-8 col-md-offset-2" ng-init="getCat()">
+    <a class="btn btn-sm pull-right" ui-sref="dashboard.addcat">Add Category</a>
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <td>Sr.No</td>
+                    <td>Image</td>
+                    <td>Catgory</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cat in category_">
+                    <td>{{$index+1}}</td>
+                    <td>
+                        <img class="img-circle" ng-src="http://localhost:8080/{{cat.img}}" height="50" width="50">
+                    </td>
+                    <td>{{cat.category}}</td>
+                    <td>
+                    <!-- <a class="btn btn-xs">Edit</a> -->
+                    <a class="btn btn-xs btn-danger" ng-click="deleteCat(cat._id)">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

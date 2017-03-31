@@ -1,0 +1,35 @@
+<nav class="navbar navbar-inverse" ng-init="" style="margin-top: -3em">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a ui-sref="main" class="navbar-brand" style="color: green">Code Blogger</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="">
+                <a ui-sref="main">
+                    <span class="glyphicon glyphicon-home"></span> Home
+                </a>
+            </li>
+            <li>
+                <a ui-sref="dashboard.articleUser">
+                    <span class="glyphicon glyphicon-user"></span> Articles
+                </a>
+            </li>
+            <li>
+                <a ui-sref="dashboard.category">
+                    <span class="glyphicon glyphicon-cog"></span> Manage Categories
+                </a>
+            </li>
+            <li>
+                <a ui-sref="dashboard.articleListUser">
+                    <span class="glyphicon glyphicon-cog"></span> Manage Articles
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="dashboard.passwordChng"><span class="glyphicon glyphicon-hand-right"></span> Change Password</a></li>
+            <li><a ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<ui-view></ui-view>
+

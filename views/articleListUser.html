@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-lg-10 col-sm-10 col-md-offset-1" ng-init="getArticleUser()">
+        <a class="btn btn-sm btn-default pull-right" ui-sref="dashboard.article">
+        <span class="glyphicon glyphicon-plus"></span> Add Article
+        </a>
+        <br>
+        <table class="table table-responsive table-bordered">
+            <thead style="border:1px solid; background-color: #925163;">
+                <tr>
+                    <td>Sr.No</td>
+                    <td>Title</td>
+                    <td>Short Description</td>
+                    <td>Edit</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <br>
+            <tbody>
+                <tr ng-repeat="article in articleUser">
+                    <td>{{$index+1}}</td>
+                    <td>
+                        <a ui-sref="default.articles({article:article.title})" class="btn">{{article.title}}</a>
+                    </td>
+                    <td  ng-bind-html="article.shortDesc">
+                        <br>
+                        <span class="author pull-right">Created On:- {{article.createdon.slice(0,10)}}</span>
+                    </td>
+                    <td>
+                        <a ui-sref="dashboard.editArticle({article:article.title})" class="btn btn-xs btn-default">Edit</a>
+                    </td>
+                    <td><a class="btn btn-xs btn-danger" ng-click="deleteArticle(article._id)">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

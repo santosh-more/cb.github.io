@@ -1,0 +1,13 @@
+<div class="row" style="background-color: #242354; border: 1px; padding: 10px;">
+    <form class="col-sm-4 col-md-4 col-md-offset-4" id="addcat">
+        <label style="color: white">Category :</label>
+        <br>
+        <input type="text" class="form-control" name="category" ng-model="category" required> 
+        <label style="color: white">Image :</label>
+        <br>
+        <input type="file" class="form-control" name="image" ng-model="image" required>
+        <br>
+        <input type="hidden" name="name" value="{{name}}">
+        <button class="btn btn-primary" ng-click="addCat()">Add Category</button>
+    </form>
+</div>

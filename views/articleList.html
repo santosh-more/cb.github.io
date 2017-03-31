@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-lg-10 col-sm-10 col-md-offset-1" ng-init="getArticleList()">
+<!--         <table ng-table="vm.tableParams" class="table" show-filter="true">
+    <tr ng-repeat="user in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+            {{user.name}}</td>
+        <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
+            {{user.age}}</td>
+    </tr>
+</table> -->
+        <table class="table table-responsive" show-filter="true" ng-table="tableParams">
+                <tr ng-repeat="article in $data">
+                    <td title="'Sr.No'">{{$index+1}}</td>
+                    <td title="'title'" filter="{ title: 'text'}" sortable="'title'">
+                        <a ui-sref="default.articles({article:article.title})" class="btn">{{article.title}}</a>
+                    </td>
+                    <td title="'Short Description'" ng-bind-html="article.shortDesc"></td>
+                    <td title="'Created On'" sortable="false">{{article.createdon.slice(0,10)}}</td>
+                    <td title="'Written By'" sortable="false">{{article.name}}</td>
+                </tr>
+        </table>
+    </div>
+</div>
+<!--  -->
+<!-- <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <td>Sr.No</td>
+                    <td>Title</td>
+                    <td>Short Description</td>
+                    <td>Created On</td>
+                    <td>Written By</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="article in articleCat">
+                    <td>{{$index+1}}</td>
+                    <td>
+                    <a ui-sref="default.articles({article:article.title})" class="btn">{{article.title}}</a>
+                    </td>
+                    <td>{{article.shortDesc}}</td>
+                    <td>{{article.createdon.slice(0,10)}}</td>
+                    <td>{{article.name}}</td>
+                </tr>
+            </tbody>
+        </table> -->

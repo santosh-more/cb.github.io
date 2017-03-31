@@ -1,0 +1,44 @@
+<style type="text/css">
+body {
+    padding-top: 20px;
+    background-color: #F7F7F7;
+    padding: 10px;
+}
+
+
+/* .MakaleYazariAdi {
+    line-height: 34px;
+}
+
+#BegeniButonlari {
+    float: right;
+    margin-top: 15px;
+} */
+</style>
+<div class="container" ng-init="getArticleUser()" id="art">
+    <div class="row">
+        <div ng-if="articleUser.length==0">
+            <img src="./assets/images/noarticles.jpg" class="img-square" height="700px" width="1000px;"> 
+        </div>
+        <div class="col-sm-4 col-md-4" ng-repeat="article_ in articleUser">
+            <div class="post">
+                <div class="post-img-content">
+                    <img class="media-object" ng-src="http://localhost:8080/{{article_.articleImage}}" alt="{{article_.articleImage}}" height="250px" width="300px">
+                    <!-- <span class="post-title"><b>Make a Image Blur Effects With</b><br />
+                        <b>CSS3 Blur</b></span> -->
+                </div>
+                <div class="content">
+                    <div class="author">
+                        By <b>{{article_.name}}</b> |
+                        <time datetime="2014-01-20">{{article_.createdon.slice(0,10)}}</time>
+                    </div>
+                    <div>
+                        <p ng-bind-html="article_.shortDesc"></p>
+                    </div>
+                    <div>
+                        <a ui-sref="dashboard.articleUOne({article:article_.title})" class="btn btn-warning btn-sm">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

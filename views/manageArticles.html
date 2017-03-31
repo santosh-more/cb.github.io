@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    $("#keywords").tagsinput('items');
+</script>
+<div class="container" ng-init="">
+    <div class="row">
+    <a ui-sref="dashboard.articleListUser" class="btn btn-default btn-xs pull-right"><i class="glyphicon  glyphicon-arrow-left"></i> Back to Manage Articles</a>
+        <div class="col-sm-8 col-md-8 col-md-offset-2" ng-init="getCatAll()">
+            <h1 class="text-center login-title">Create Article</h1>
+            <div class="account-wall" style="padding: 10px;">
+                <form class="form" id="article">
+                    <div class="form-group">
+                        <label>Title :</label>
+                        <input type="text" class="form-control" required autofocus name="title" ng-model="title">
+                        <label>Category :</label>
+                        <select class="form-control" name="category" ng-model="category" multiple required>
+                            <option ng-repeat="cat in category_All" value="{{cat.category}}">
+                                {{cat.category}}
+                            </option>
+                        </select>
+                        <label>Short Description :</label>
+                        <textarea ckeditor="options" class="form-control ckeditor" rows="3" size="100" ng-model="description"></textarea>
+                        <label>Full Story :</label>
+                        <!-- <textarea class="form-control textarea" rows="3" size="100" name="fullstory" ng-model="fullstory"></textarea> -->
+                         <textarea ckeditor="options" class="form-control ckeditor" ng-model="fullstory" placeholder="Enter Description" required></textarea>
+                        <br>
+                        <label>Keywords :</label>
+                        <input type="text" class="form-control" required autofocus id="keywords" name="keywords" ng-model="keywords" data-role="tagsinput">
+                        <br>
+                        <label>Image :</label>
+                        <input type="file" class="form-control" required autofocus name="imageArticle" ng-model="imageArticle">
+                        <br>
+                        <button class="btn btn-md btn-primary" type="submit" ng-click="addArticle()">Create Article</button>
+                        <input type="hidden" name="name" ng-model="name" value="{{name}}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

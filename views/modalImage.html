@@ -1,0 +1,12 @@
+<!-- <div class="modal-header">
+    <h3 class="modal-title"></h3>
+</div> -->
+<div class="modal-body text-center" style="background-color: rgba(0,0,0,0.4); opacity: 50%;">
+    <!-- <img src="https://static.pexels.com/photos/20974/pexels-photo.jpg" class="img img-responsive"> -->
+    <img ng-src="http://localhost:8080/{{$ctrl.item}}" class="img img-responsive">
+    <!-- Image Name Is:{{$ctrl.item}} -->
+</div>
+<div class="modal-footer" style="background-color: rgba(0,0,0,0.4);">
+    <button class="btn btn-link" type="button" ng-click="$ctrl.ok()">OK</button>
+    <!-- <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button> -->
+</div>
